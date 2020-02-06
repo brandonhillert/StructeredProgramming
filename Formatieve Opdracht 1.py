@@ -14,8 +14,6 @@ for x in range(grootte):
     print("*" * grootte)
 
 
-
-
 """"
 Opdracht 1 piramide Do-while Loop"""
 
@@ -58,10 +56,8 @@ grootte = int(input())
 
 x = 1
 while x < grootte + 1:
-
     print((" " * (grootte - x)) + ('*' * x))
     x = x + 1
-
 
 x = 1
 while x < grootte + 1:
