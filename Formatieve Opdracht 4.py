@@ -27,3 +27,20 @@ palindroom_check()
 
 
 def palindroom_check_2():
+
+    print("Geef een woord:")
+    woord = str(input())
+
+    woord_van_voren = []
+    woord_achterstevoren = []
+
+    for letter in woord:
+        woord_van_voren.append(letter)
+        woord_achterstevoren.append(letter)
+
+    woord_achterstevoren.reverse()
+
+    if woord_van_voren == woord_achterstevoren:
+        print("Het woord is een palindroom")
+    else:
+        print("Geen palindroom")

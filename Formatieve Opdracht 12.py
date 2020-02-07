@@ -9,3 +9,19 @@ de verschillende uitwerkingen hebben andere voor- en nadelen die interessant zij
 bespreken tijdens een sollicitatiegesprek.
 
 """
+
+getal = 0
+
+for i in range(101):
+    print(i)
+    if i % 3 == 0 and i % 5 == 0:
+        print("fizzbuzz")
+
+    if i % 3 == 0:
+        print("Fizz")
+    if i % 5 == 0:
+        print("buzz")
+
+
+
+
