@@ -5,11 +5,8 @@ Schrijf een versie die gebruikt maakt van een bibliotheekfunctie die een string 
 Maak ook een versie waarbij jij zelf het omdraaien verzorgt. Probeer zo min mogelijk code te gebruiken.
 """
 
-def palindroom_check():
 
-    print("Geef een woord:")
-    woord = str(input())
-
+def palindroom_check(woord):
     woord_van_voren = []
     woord_achterstevoren = []
 
@@ -20,17 +17,15 @@ def palindroom_check():
     woord_achterstevoren.reverse()
 
     if woord_van_voren == woord_achterstevoren:
-        print("Het woord is een palindroom")
-    else: print("Geen palindroom")
+        print(str(woord) + " is een palindroom")
+    else:
+        print(str(woord) + " is geen palindroom")
 
-palindroom_check()
 
+palindroom_check("lepel")
+palindroom_check("steellepel")
 
-def palindroom_check_2():
-
-    print("Geef een woord:")
-    woord = str(input())
-
+def palindroom_check_2(woord):
     woord_van_voren = []
     woord_achterstevoren = []
 
