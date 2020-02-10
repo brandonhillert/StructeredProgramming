@@ -6,34 +6,36 @@ Het complete programma vraagt om twee strings aan de gebruiker en print de index
 Zorg je dat de functie goed test. Let op: een string mag spaties bevatten!
 """
 
-#def geef_index():
-def zoek_verschillende_waarde():
 
-    print("Geef een string:")
-    string_nummer_1 = input()
+def zoek_verschil(string_1, string_2):
 
-    print("Geef een string:")
-    string_nummer_2 = input()
+    counter = 0
+    lijst_1 = []
+    lijst_2 = []
 
-    list_string_1 = []
-    list_string_2 = []
+    for char in string_1:
+        lijst_1.append(char)
 
-    for letter in string_nummer_1:
-        list_string_1.append(letter)
+    for char in string_2:
+        lijst_2.append(char)
 
-    for letter in string_nummer_2:
-        list_string_2.append(letter)
-
-    print(list_string_1)
-    print(list_string_2)
-
-    for i in range(len(string_nummer_1)):
-        if list_string_1[i] == list_string_2[i]:
-            print("gelijk")
-        else: print("de index waar ze ongelijk zijn is" + str(i) )
+    print(lijst_1)
+    print(lijst_2)
 
 
+    for letter in range(100):
+
+        if string_1[counter] == string_2[counter]:
+            print(string_1[counter] + str(" is gelijk aan ") + string_2[counter])
+        else:
+            print("fout op de " + str(letter + 1) + "de karakter")
+            break
+
+        counter += 1
+
+        if counter == len(string_1):
+            break
 
 
 
-zoek_verschillende_waarde()
+zoek_verschil("hallo", "hallow")
