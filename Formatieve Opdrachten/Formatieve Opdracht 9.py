@@ -27,6 +27,9 @@ def verschuiving_links(ch, n):
     return lijst_nummers
 
 
+
+
+
 def verschuiving_rechts(ch, n):
 
     lijst_nummers = []
