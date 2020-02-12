@@ -11,18 +11,36 @@ def code_genereren():
 
     return code
 
+def keuzes_invullen():
+
+    gok_in_lijst = []
+
+    print('Geef 4 getallen: ')
+    gok = input()
+
+
+"""https://stackoverflow.com/questions/354038/how-do-i-check-if-a-string-is-a-number-float"""
+    if gok.isdigit():
+        for nummer in gok:
+        gok_in_lijst.append(nummer)
+    else:
+    print('Geef 4 getallen: ')
+    gok = input()
+
+
+
+
+    print(gok_in_lijst)
+
 
 
 def feedback():
 
 
 
+
     print("hello")
 
-def keuzes_invullen():
-    print("hello")
 
 
-
-code = code_genereren()
-print(code)
+keuzes_invullen()
