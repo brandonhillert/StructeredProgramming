@@ -29,17 +29,27 @@ def keuzes_invullen(gok):
 
     return gok_lijst
 
+"""Deze functie controleert of de gok van de gebruiker overeenkomt met de gegenereerde code
+    De code moet x teruggeven als het getal er in zit
+    De code moet Y teruggeven als het getal op de goede plek zit
+    de code print " " als er niks aan de hand is
+"""
+def feedback( lijst_gok, lijst_code):
 
+    feedback_lijst = []
+    index = 0
 
+    for nummer in lijst_gok:
+        if nummer in lijst_code:
+            if nummer == lijst_code[index]:
+                feedback_lijst.append("Y")
+            else:
+                feedback_lijst.append("x")
+        else:
+            feedback_lijst.append(" ")
 
-def feedback(lijst_gok , lijst_code):
+        index += 1
 
+    return feedback_lijst
 
-
-
-
-
-feedback(keuzes_invullen("3456"),code_genereren())
-
-#def aantal_keer_gokken( ):
 
