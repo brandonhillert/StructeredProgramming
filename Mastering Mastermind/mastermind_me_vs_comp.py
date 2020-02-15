@@ -57,7 +57,7 @@ def spelen_tegen_computer():
     code = code_genereren()
 
 
-    print("Welkom bij Mastermind")
+    print("Welkom bj Mastermind")
     print("De code is gezet, het is aan jouw om de code te kraken!")
     print("Na iedere poging zal de computer jouw feedback geven, door deze feedback kun jij kijken of je steeds dichter bij de code komt")
     print("De X geeft aan dat de nummer in de code zit")
