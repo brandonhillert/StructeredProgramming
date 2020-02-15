@@ -52,6 +52,28 @@ def feedback( lijst_gok, lijst_code):
 
     return feedback_lijst
 
+"""Algemene code om progamma te runnen"""
+code = code_genereren()
+
+
+print("Welkom bij Mastermind")
+print("De code is gezet, het is aan jouw om de code te kraken!")
+print("Na iedere poging zal de computer jouw feedback geven, door deze feedback kun jij kijken of je steeds dichter bij de code komt")
+print("De X geeft aan dat de nummer in de code zit")
+print("De Y geeft aan dat de nummer op de juiste plek zit")
+print("Veel succes met spelen!")
 
 for i in range(10):
-    
+    print("Poging: "+ str(i +1) + "______________________________________")
+    print("Doe een gok: ")
+    gok = input()
+
+    print(feedback(keuzes_invullen(gok), code))
+    if keuzes_invullen(gok) == code:
+        print("Gefeliciteerd, je hebt de code gekraakt")
+        break
+
+if keuzes_invullen(gok) != code:
+    print("Helaas, het is je niet gelukt om de code te kraken, de code was: ")
+
+print(code)
