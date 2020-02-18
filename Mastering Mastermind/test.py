@@ -1,7 +1,6 @@
+import random
 import itertools
 
-"""Deze functie retouneert een lijst met alle mogelijke combinaties van abcdef"""
-"""https://stackoverflow.com/questions/45990454/generating-all-possible-combinations-of-characters-in-a-string"""
 def lijst_combinaties():
     lijst = []
 
@@ -10,4 +9,12 @@ def lijst_combinaties():
 
     return lijst
 
-lijst_combinaties()
+lijst = lijst_combinaties()
+
+"""Deze functie genereert een random combinatie uit de lijst"""
+def random_combinatie_computer(lijst):
+    return random.choice(lijst)
+
+
+
+print(random_combinatie_computer(lijst))

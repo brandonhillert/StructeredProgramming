@@ -11,3 +11,25 @@ def lijst_combinaties():
     return lijst
 
 
+"""Deze functie vraagt de gebruiker om een code in te voeren en checkt de code op invoer"""
+def code_invullen():
+    code = " "
+
+    print("Vul een code in: ")
+    code = input()
+
+    for i in code:
+        if i not in "abcdef" or len(code) != 4:
+            print("Foutmelding")
+            print("Vul een code in")
+            code = input()
+    return code
+
+
+"""Deze functie genereert een random combinatie uit de lijst
+https://pynative.com/python-random-choice/"""
+def random_combinatie_computer(lijst):
+    return random.choice(lijst)
+
+
+def feedback():
