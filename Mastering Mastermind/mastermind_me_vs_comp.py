@@ -52,6 +52,8 @@ def feedback( lijst_gok, lijst_code):
 
     return feedback_lijst
 
+
+
 """Algemene code om progamma te runnen"""
 def spelen_tegen_computer():
     code = code_genereren()

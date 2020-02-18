@@ -10,4 +10,4 @@ def lijst_combinaties():
 
     return lijst
 
-
+lijst_combinaties()
