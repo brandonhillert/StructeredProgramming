@@ -69,12 +69,10 @@ waarbij alle mogelijkheden die 100% niet kunnen, zijn verwijderd uit de lijst
 def feedback_analyseren_comp():
     gok_computer = random_combinatie_computer(lijst_combinaties())
     lijst = lijst_combinaties()
+    lijst_feedback = []
 
     #feedback_mens = feedback_geven_mens() #Moet gelijk zijn aan de feedback van de computer in lijst per combinatie
-
-
     #Iedere combinatie in de lijst door
-
 
     for combinatie in lijst:
         a = 0
@@ -84,16 +82,20 @@ def feedback_analyseren_comp():
         for letter in combinatie:
             if letter == gok_computer[index]:
                 a += 1
+                b -= 1
             if letter in gok_computer:
                 b += 1
-        index += 1
+            index += 1
 
-        feedback_combinatie = [a, b]
+        feedback_per_combinatie = [a, b]
+        lijst_feedback.append(feedback_per_combinatie)
 
-        print(gok_computer)
-        print(combinatie)
-        print(feedback_combinatie)
-        print("______")
+
+    for i in lijst_feedback:
+        print(i)
+    print(len(lijst_feedback))
+
+
 
 
 
