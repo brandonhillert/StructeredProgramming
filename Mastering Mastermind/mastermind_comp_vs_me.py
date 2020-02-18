@@ -57,7 +57,11 @@ def feedback_geven_mens():
 x = feedback_geven_mens()
 
 
-"""De computer analyseert de feedback die is gegeven, """
+"""De computer vergelijkt gok met de code
+    De mens geeft feedback
+    De computer analyseert de feedback die is gegeven, en keert een lijst met waardes terug 
+waarbij alle mogelijkheden die 100% niet kunnen, zijn verwijderd uit de lijst
+ """
 
 def feedback_analyseren_comp(x):
 
