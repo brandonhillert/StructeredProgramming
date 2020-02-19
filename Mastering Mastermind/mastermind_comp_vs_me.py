@@ -31,7 +31,6 @@ def code_invullen():
             code = input()
     return code
 
-
 """" Hier zou ik nog een if/else/while/for loop kunnen maken die de input controleert":
 Als zwartpinnen is 0, moet witte pinnen 0 tm 4 zijn
 Als zwartepinnen is 1, moeten witte pinnen 0 tm 3 zijn
@@ -53,7 +52,6 @@ def feedback_geven_mens():
 
     return feedback
 
-
 """ Deze functie krijgt 2 waardes die worden meegegeven:
 1. De random waarde die wordt gekozen door de computer in een lijst = de gok 
 2. De lijst met nog alle combinaties die mogelijk zijn
@@ -62,7 +60,7 @@ De functie gaat de lijst door met alle combinaties die mogelijk zijn. Hij vergel
 Ieder getal krijgt hiervoor een bepaalde feedback. Deze lijst kan vervolgens in een andere functie worden gebruikt, om de feedback met de code te vergelijken met de feedback van de gok. 
 
 """
-def feedback_analyseren_comp(gok_computer , lijst ):
+def lijst_analyseren_comp(gok_computer , lijst ):
     lijst_feedback = []
 
     for combinatie in lijst:
@@ -89,16 +87,12 @@ def feedback_analyseren_comp(gok_computer , lijst ):
 
     return lijst_feedback
 
-
-
-
-
-
 """" Vergelijk de feeedback ( feedback_geven_mens) met de lijst die alle feedback van de gok heeft
        Alle elementen in die lijst, die niet gelijk staan aan de feedback verwijderen
        Ook alle combinaties in lijst_combinaties verwijderen met dezelfde index als de feedback"""
 
-def feedback_verwijderen_lijst(feedback, lijst_combinaties, lijst_feedback ):
+def nieuwe_lijst_feedback(feedback, lijst_combinaties, lijst_feedback ):
+
     nieuwe_lijst_feedback = []
     lijst_mogelijke_combinaties = []
 
@@ -110,73 +104,35 @@ def feedback_verwijderen_lijst(feedback, lijst_combinaties, lijst_feedback ):
             lijst_mogelijke_combinaties.append(lijst_combinaties[index])
         index += 1
 
+
+
     return lijst_mogelijke_combinaties
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def hoofd_programma():
-
     #Lijst met alle mogelijke combinaties
     lijst = lijst_combinaties()
 
     #Code invullen
     code = code_invullen()
 
+    print("________________________")
     for i in range(10):
-        #computer doet een random gok
         gok_computer = random_combinatie_computer(lijst)
+
+        print("De computer gokt:")
         print(gok_computer)
 
-        #Persoon geeft feedback
-        feedback = feedback_geven_mens()
-
-        #Computer vergelijkt eerst gok met alle waardes in lijst, voor feedback per combinatie
-        lijst_feedback = feedback_analyseren_comp(gok_computer, lijst)
-
-        #computer vergelijkt feedback, met feedback in lijst
-        #computer haalt alle elementen die 100% niet kunne
-        #computer keert een nieuwe lijst terug, waar de code in kan zitten
-        lijst = feedback_verwijderen_lijst(feedback,lijst, lijst_feedback )
-
-        print("mogelijkheden zijn:")
+        print("Mogelijkheden code:")
         print(lijst)
+        print(lijst_analyseren_comp(gok_computer ,lijst ))
 
+        if len(lijst) == 1:
+            print("Je hebt verloren")
+            break
 
-
-
-hoofd_programma()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        feedback = feedback_geven_mens()
+        lijst = nieuwe_lijst_feedback(feedback, lijst, lijst_analyseren_comp(gok_computer , lijst ))
 
 
 
