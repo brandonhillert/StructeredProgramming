@@ -1,3 +1,9 @@
+""""BRON : 2.1 A Simple Strategy
+YET ANOTHER MASTERMIND STRATEGY
+Department of Philosophy, University of Groningen, The Netherlands
+Barteld Kooi
+"""
+
 import itertools
 import random
 
