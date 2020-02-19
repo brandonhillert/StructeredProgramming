@@ -1,6 +1,12 @@
 import itertools
 import random
 
+
+"""Deze functie genereert een random combinatie uit de lijst
+https://pynative.com/python-random-choice/"""
+def random_combinatie_computer(lijst):
+    return random.choice(lijst)
+
 """Deze functie retouneert een lijst met alle mogelijke combinaties van abcdef"""
 """https://stackoverflow.com/questions/45990454/generating-all-possible-combinations-of-characters-in-a-string"""
 def lijst_combinaties():
@@ -10,7 +16,6 @@ def lijst_combinaties():
         lijst.append(''.join(x))
 
     return lijst
-
 
 """Deze functie vraagt de gebruiker om een code in te voeren en checkt de code op invoer"""
 def code_invullen():
@@ -25,12 +30,6 @@ def code_invullen():
             print("Vul een code in")
             code = input()
     return code
-
-
-"""Deze functie genereert een random combinatie uit de lijst
-https://pynative.com/python-random-choice/"""
-def random_combinatie_computer(lijst):
-    return random.choice(lijst)
 
 
 """" Hier zou ik nog een if/else/while/for loop kunnen maken die de input controleert":
@@ -91,7 +90,96 @@ def feedback_analyseren_comp(gok_computer , lijst ):
     return lijst_feedback
 
 
-gok_computer = random_combinatie_computer(lijst_combinaties())
-lijst = lijst_combinaties()
 
-print(feedback_analyseren_comp(gok_computer, lijst))
+
+
+
+"""" Vergelijk de feeedback ( feedback_geven_mens) met de lijst die alle feedback van de gok heeft
+       Alle elementen in die lijst, die niet gelijk staan aan de feedback verwijderen
+       Ook alle combinaties in lijst_combinaties verwijderen met dezelfde index als de feedback"""
+
+def feedback_verwijderen_lijst(feedback, lijst_combinaties, lijst_feedback ):
+    nieuwe_lijst_feedback = []
+    lijst_mogelijke_combinaties = []
+
+    index = 0
+
+    for i in lijst_feedback:
+        if i == feedback:
+            nieuwe_lijst_feedback.append(i)
+            lijst_mogelijke_combinaties.append(lijst_combinaties[index])
+        index += 1
+
+    return lijst_mogelijke_combinaties
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def hoofd_programma():
+
+    #Lijst met alle mogelijke combinaties
+    lijst = lijst_combinaties()
+
+    #Code invullen
+    code = code_invullen()
+
+    for i in range(10):
+        #computer doet een random gok
+        gok_computer = random_combinatie_computer(lijst)
+        print(gok_computer)
+
+        #Persoon geeft feedback
+        feedback = feedback_geven_mens()
+
+        #Computer vergelijkt eerst gok met alle waardes in lijst, voor feedback per combinatie
+        lijst_feedback = feedback_analyseren_comp(gok_computer, lijst)
+
+        #computer vergelijkt feedback, met feedback in lijst
+        #computer haalt alle elementen die 100% niet kunne
+        #computer keert een nieuwe lijst terug, waar de code in kan zitten
+        lijst = feedback_verwijderen_lijst(feedback,lijst, lijst_feedback )
+
+        print("mogelijkheden zijn:")
+        print(lijst)
+
+
+
+
+hoofd_programma()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
