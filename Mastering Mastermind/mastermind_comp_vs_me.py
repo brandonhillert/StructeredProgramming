@@ -55,72 +55,43 @@ def feedback_geven_mens():
     return feedback
 
 
-"""De computer vergelijkt gok met de code
-    De mens geeft feedback
-    De computer analyseert de feedback die is gegeven, en keert een lijst met waardes terug 
-waarbij alle mogelijkheden die 100% niet kunnen, zijn verwijderd uit de lijst
- """
-""""Computer krijgt lijst[feedback]
-    computer vergelijkt gok met lijst
-    Computer moet lijst maken met feedback [0,0] [2,1] etc
-    Computer moeten zoeken naar lijst met dezelfde feedback die gegeven is
+""" Deze functie krijgt 2 waardes die worden meegegeven:
+1. De random waarde die wordt gekozen door de computer in een lijst = de gok 
+2. De lijst met nog alle combinaties die mogelijk zijn
+
+De functie gaat de lijst door met alle combinaties die mogelijk zijn. Hij vergelijkt de combinatie in die lijst met de gok van de computer.
+Ieder getal krijgt hiervoor een bepaalde feedback. Deze lijst kan vervolgens in een andere functie worden gebruikt, om de feedback met de code te vergelijken met de feedback van de gok. 
+
 """
-
-
-def feedback_analyseren_comp():
-    gok_computer = random_combinatie_computer(lijst_combinaties())
-    lijst = lijst_combinaties()
+def feedback_analyseren_comp(gok_computer , lijst ):
     lijst_feedback = []
 
-    #feedback_mens = feedback_geven_mens() #Moet gelijk zijn aan de feedback van de computer in lijst per combinatie
-    #Iedere combinatie in de lijst door
-
     for combinatie in lijst:
-        a = 0
-        b = 0
-        index = 0
+        zwarte_pinnen = 0
+        witte_pinnen = 0
 
-        for letter in combinatie:
-            if letter == gok_computer[index]:
-                a += 1
-                b -= 1
-            if letter in gok_computer:
-                b += 1
-            index += 1
+        #stopt de waardes in een lijst, zodat deze bewerkt kan worden
+        combinatie_in_lijst = list(combinatie)
+        gok_in_lijst = list(gok_computer)
 
-        feedback_per_combinatie = [a, b]
+        for i in range(len(combinatie_in_lijst)):
+            if combinatie_in_lijst[i] == gok_in_lijst[i]:
+                zwarte_pinnen += 1
+                combinatie_in_lijst[i] = 0
+                gok_in_lijst[i] = 1
+
+            if combinatie_in_lijst[i] in gok_in_lijst:
+                witte_pinnen += 1
+                combinatie_in_lijst[i] = 0
+                gok_in_lijst[i] = 1
+
+        feedback_per_combinatie = [zwarte_pinnen, witte_pinnen]
         lijst_feedback.append(feedback_per_combinatie)
 
-
-    for i in lijst_feedback:
-        print(i)
-    print(len(lijst_feedback))
+    return lijst_feedback
 
 
+gok_computer = random_combinatie_computer(lijst_combinaties())
+lijst = lijst_combinaties()
 
-
-
-
-feedback_analyseren_comp()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+print(feedback_analyseren_comp(gok_computer, lijst))
