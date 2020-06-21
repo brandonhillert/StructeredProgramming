@@ -110,8 +110,6 @@ def nieuwe_lijst_feedback(feedback, lijst_combinaties, lijst_feedback ):
             lijst_mogelijke_combinaties.append(lijst_combinaties[index])
         index += 1
 
-
-
     return lijst_mogelijke_combinaties
 
 
