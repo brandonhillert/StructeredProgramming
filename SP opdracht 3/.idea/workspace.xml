@@ -22,7 +22,7 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Progamming_HU/test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Ipass_wine_decission_tree/project_map" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -181,7 +181,8 @@
       <workItem from="1589379892481" duration="315000" />
       <workItem from="1592050273527" duration="682000" />
       <workItem from="1592228132806" duration="17340000" />
-      <workItem from="1592774962520" duration="320000" />
+      <workItem from="1592774962520" duration="921000" />
+      <workItem from="1592992630418" duration="765000" />
     </task>
     <servers />
   </component>
